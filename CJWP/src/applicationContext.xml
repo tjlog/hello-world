@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+	<beans profile="dev">
+		<bean  id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<!-- 数据库驱动 -->
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<!-- 数据库库地址 -->
+		<property name="url" value="${jdbc.url}" />
+		<!-- 数据库用户名 密码 连接池最大活动数和最小活动数 最大等待时间 最大闲置 -->
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="maxActive" value="${datasource.maxActive}" />
+		<property name="maxIdle" value="${datasource.maxIdle}" />
+		<property name="maxWait" value="${datasource.maxWait}" />
+		<!--<property name="defaultAutoCommit" value="true" /> <property name="removeAbandoned" 
+			value="true" /> <property name="removeAbandonedTimeout" value="60" /> <property 
+			name="validationQuery" value="select 1 " /> <property name="testOnBorrow" 
+			value="true" /> -->
+		</bean>
+	
+	
+	</beans>
+	
+
+</beans>
